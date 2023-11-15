@@ -14,3 +14,11 @@ The notebook loads a dataset named "TweetSumm" from Salesforce's Dialog Studio u
 There are functions defined for processing and cleaning text data. The generate_training_prompt function creates training prompts for a conversational summarization task.
 The generate_text function generates training examples from the loaded dataset.
 The process_dataset function applies these text processing functions to the training and validation datasets.
+
+## Model Creation:
+The create_model_and_tokenizer function is responsible for initializing both the language model and the tokenizer.
+The BitsAndBytesConfig is used to configure quantization settings for model optimization, enabling the use of 4-bit quantization.
+The language model (model) is loaded from the pretrained model specified by MODEL_NAME.
+Various configurations, such as using SafeTensors for numerical stability, applying quantization, trusting remote code during loading, and automatic device mapping, are set during model initialization.
+The tokenizer (tokenizer) is loaded from the same pretrained model.
+Special token settings are adjusted, including setting the padding token to the end-of-sequence token (eos_token) and specifying padding on the right side.
