@@ -1,4 +1,4 @@
-# This method leverages Gradient library 
+# Leveraging Gradient library 
 
 ## This pipeline requires to sign up in [gradient.ai](https://gradient.ai/) and receive workspace id as well as access key. 
 ## A noticeable benefit of this pipeline is developer can simply create its own dataset according to the code format and fine tune the model on it. 
