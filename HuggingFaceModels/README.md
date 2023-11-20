@@ -107,8 +107,8 @@ The libraries Transformer Reinforcement Learning (TRL) is released to facilitate
 
 The Parameter-Efficient Fine-Tuning (PEFT) library idea is to reduce the number of trainable paramters of a pretrained model with aim of reduction in computation time and cost (GPU memory). There are several advantageous techniques that can be implemented by PEFT and we are going to indicate two of them:
 
-Adapter Layer: Intoduced from the paper [Parameter-Efficient Transfer Learning for NLP
+1. Adapter Layer: Intoduced from the paper [Parameter-Efficient Transfer Learning for NLP
 ](https://arxiv.org/pdf/1902.00751.pdf), adapters are additional neural network components inserted between layers of the pre-trained model. They're specifically trained for individual tasks and allow the model to adapt without modifying the original parameters extensively.
 
-LORA: Originated from the paper [LORA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS](https://arxiv.org/pdf/2106.09685.pdf), LORA focuses on reducing the dimensionality of the pre-trained model's parameters to enable efficient adaptation to new tasks. By leveraging low-rank approximations, LORA aims to retain the crucial information present in the parameters while significantly reducing their number, making adaptation to new tasks more computationally efficient. By reducing the rank of these weight matrices it means finding a lower-dimensional representation that captures most of the important information present in the original matrix.
+2. LORA: Originated from the paper [LORA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS](https://arxiv.org/pdf/2106.09685.pdf), LORA focuses on reducing the dimensionality of the pre-trained model's parameters to enable efficient adaptation to new tasks. By leveraging low-rank approximations, LORA aims to retain the crucial information present in the parameters while significantly reducing their number, making adaptation to new tasks more computationally efficient. By reducing the rank of these weight matrices it means finding a lower-dimensional representation that captures most of the important information present in the original matrix.
    
