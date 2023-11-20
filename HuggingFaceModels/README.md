@@ -1,4 +1,3 @@
-<<<<<<< HEAD:HuggingFaceModels/README.md
 ## Imports and Setup:
 
 The notebook starts with !nvidia-smi that is a command used to display information about the available GPU (if any) in the Colab environment.
@@ -96,4 +95,13 @@ The generate_prompt function is defined to create a prompt for inference based o
 An example from the test dataset is selected.
 The summary and conversation for the selected example are printed.
 The inference code (summarize function) is provided but commented out.
->>>>>>> c20463b804d21943505c475447053170dfad93c4:CustomizedFineTunner/README.md
+
+
+----------------------------------------
+Theory behind this code:
+the libraries trl and peft are released to facilitate using RLHF (Reinforcement Learning with Human Feedback) in LLM finetuning. There are basically three steps in RLHF based fine tuning of LLMs:
+1. Fine tune the LLM model on a downstream task
+2. Prepare a human annotated dataset and train a reward model
+3. Further fine-tune the LLM from step 1 with the reward model and this dataset using RL that is usually by Proximal Policy Optimization algorithm
+
+   
