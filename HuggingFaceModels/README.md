@@ -1,4 +1,4 @@
-<<<<<<< HEAD:HuggingFaceModels/README.md
+# Code explanation 
 ## Imports and Setup:
 
 The notebook starts with !nvidia-smi that is a command used to display information about the available GPU (if any) in the Colab environment.
@@ -96,4 +96,19 @@ The generate_prompt function is defined to create a prompt for inference based o
 An example from the test dataset is selected.
 The summary and conversation for the selected example are printed.
 The inference code (summarize function) is provided but commented out.
->>>>>>> c20463b804d21943505c475447053170dfad93c4:CustomizedFineTunner/README.md
+
+
+----------------------------------------
+# Theory behind this code:
+The libraries Transformer Reinforcement Learning (TRL) is released to facilitate using RLHF (Reinforcement Learning with Human Feedback) in LLM finetuning. There are basically three steps in RLHF based fine tuning of LLMs:
+1. Fine tune the LLM model on a downstream task
+2. Prepare a human annotated dataset and train a reward model
+3. Further fine-tune the LLM from step 1 with the reward model and this dataset using RL that is usually by Proximal Policy Optimization algorithm
+
+The Parameter-Efficient Fine-Tuning (PEFT) library idea is to reduce the number of trainable paramters of a pretrained model with aim of reduction in computation time and cost (GPU memory). There are several advantageous techniques that can be implemented by PEFT and we are going to indicate two of them:
+
+1. Adapter Layer: Intoduced from the paper [Parameter-Efficient Transfer Learning for NLP
+](https://arxiv.org/pdf/1902.00751.pdf), adapters are additional neural network components inserted between layers of the pre-trained model. They're specifically trained for individual tasks and allow the model to adapt without modifying the original parameters extensively.
+
+2. LORA: Originated from the paper [LORA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS](https://arxiv.org/pdf/2106.09685.pdf), LORA focuses on reducing the dimensionality of the pre-trained model's parameters to enable efficient adaptation to new tasks. By leveraging low-rank approximations, LORA aims to retain the crucial information present in the parameters while significantly reducing their number, making adaptation to new tasks more computationally efficient. By reducing the rank of these weight matrices it means finding a lower-dimensional representation that captures most of the important information present in the original matrix.
+   
